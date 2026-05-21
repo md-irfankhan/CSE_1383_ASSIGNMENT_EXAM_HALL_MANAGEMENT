@@ -31,7 +31,7 @@ void hallOccupancy(int hall[][10], int hallCount, int seatCount){
         }
         vacant=seatCount-occupied;
         percentage=((float)occupied/seatCount)*100;
-        printf("Hall-%d:Occopied seat percentage: %.2f percent and vacant seat is %d \n",hallNumber+1,percentage,occupied);
+        printf("Hall-%d:Occopied seat percentage: %.2f percent and vacant seat is %d \n",hallNumber+1,percentage,vacant);
     }
 
 }
@@ -54,6 +54,20 @@ void overloadedHall(int hall[][10], int hallCount, int seatCount){
         
     }
 
+}
+
+void findEmptySeat(int hall[][10], int hallCount, int seatCount){
+    int hallNumber,seatNumber,empty=0;
+    for(hallNumber=0;hallNumber<hallCount;hallNumber++){
+        empty=0;
+        for(seatNumber=0;seatNumber<seatCount;seatNumber++){
+            if(hall[hallNumber][seatNumber]==0){
+                empty++;
+                printf("Hall %d: Empty seat postion %d \n",hallNumber+1,seatNumber+1);
+            }
+        }
+        
+    }
 }
 int main(){
     int hallCount=0,seatCount, studentCount,maxSeat;
@@ -96,5 +110,7 @@ int main(){
     hallOccupancy(hallArray, hallCount, seatCount);
 
     overloadedHall(hallArray, hallCount, seatCount);
+
+    findEmptySeat(hallArray, hallCount,seatCount);
 
 }
