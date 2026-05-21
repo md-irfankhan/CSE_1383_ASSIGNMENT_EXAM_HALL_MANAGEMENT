@@ -69,6 +69,27 @@ void findEmptySeat(int hall[][10], int hallCount, int seatCount){
         
     }
 }
+
+void searchStudent(int hall[][30], int hallCount, int
+seatCount, int studentID){
+    int hallNumber,seatNumber,f=0;
+    for(hallNumber=0;hallNumber<hallCount;hallNumber++){
+        
+        for(seatNumber=0;seatNumber<seatCount;seatNumber++){
+            if(hall[hallNumber][seatNumber]==studentID){
+                f=1;
+                break;
+            }
+            else if(hall[hallNumber][seatNumber]==0){
+                f=0;
+                break;
+            }
+        }
+        
+    }
+    (f==1)?printf("Hall %d: ID:%d seat postion is %d \n",hallNumber+1,studentID,seatNumber+1):printf("Not found student");
+
+}
 int main(){
     int hallCount=0,seatCount, studentCount,maxSeat;
     /*This array represents row as exam hall and column as students seat
