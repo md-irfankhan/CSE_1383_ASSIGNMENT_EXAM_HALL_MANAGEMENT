@@ -129,7 +129,7 @@ void displaySeatArrangements(int hall[][10], int hallCount, int seatCount)
         printf("\n");
     }
 }
-
+//---------Task 8: Hall Optimization Suggestion
 void suggestOptimization(int hall[][10], int hallCount, int seatCount)
 {
     int hallNumber, seatNumber, occupied = 0, vacant;
@@ -155,7 +155,7 @@ void suggestOptimization(int hall[][10], int hallCount, int seatCount)
         printf("No optimization suggestion.\n");
     }
 }
-
+//..............Task 9: Report Generation Module
 void reportGenerate(int hall[][10], int hallCount, int seatCount,int studentCount){
     int hallNumber, seatNumber, occupied = 0, vacant;
     float percentage;
@@ -188,7 +188,7 @@ int main()
         }
     }
     // Take input number of seats.
-    printf("Enter number of seats per hall:");
+    printf("Enter number of seats per hall(1-10):");
     while (seatCount > 10 || seatCount <= 0)
     {
         scanf("%d", &seatCount);
@@ -212,8 +212,10 @@ int main()
 
     // This function used to allocate seats.
     allocateSeats(hallArray, hallCount, seatCount, studentCount);
+    //This function is called to generate report
     reportGenerate(hallArray,hallCount,seatCount,studentCount);
     printf("Enter Student Id to search student:");
+    //Student Search
     scanf("%d", &studentId);
     searchStudent(hallArray, hallCount, seatCount, studentId);
     
